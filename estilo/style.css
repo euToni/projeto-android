@@ -1,0 +1,214 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family= Bebas +Neue & display=swap');
+
+@font-face {
+    font-family: 'Android';
+    src: url('/html-css/exercicios/desafioRES/fontes/idroid.otf') format('opentype');
+    font-weight: normal;
+}
+
+:root{
+--cor0:  #c5edd6;
+--cor01: #83e1ad;
+--cor02: #3ddc84;
+--cor03: #2fa866;
+--cor04: #1a5c37;
+--cor05: #063d1e;
+
+--fonte-padrao: Arial, Verdana, Helvetica, sans-serif;
+--fonte-destaque: 'Bebas Neue', cursive;
+--fonte-android: 'Android', cursive
+}
+  
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+    background-color: var(--cor0);
+    font-family: var(--fonte-padrao);
+}
+
+.externo::after{
+    content: '\1F517';
+}
+
+header{
+    background-image: linear-gradient(to bottom, var(--cor03), var(--cor05)); /*Gradiente do header*/
+    min-height: 150px;
+    text-align: center;
+    padding-top: 30px;
+}
+
+header > h1{
+   color: white; 
+   font-family: var(--fonte-destaque); 
+   font-size: 3em;
+   margin-bottom: 20px; 
+   text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.466);
+   font-weight: normal;
+}
+
+header > p {
+    font-family: var(--fonte-padrao);
+    font-size: 1.2em;
+    color: white;
+    max-width: 600px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 30px;
+    margin: auto;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.466);
+}
+
+nav {
+    padding: 10px;
+    padding-top: 20px;
+    background-color: var(--cor05);
+    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.377);
+}
+
+nav > a {
+    color:white;
+    padding: 10px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: 0.5s;
+}
+
+nav > a:hover{
+    background-color: var(--cor03);
+    color: var(--cor05);
+
+}
+
+main{
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px; /*Descolando do footer*/
+    padding: 20px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.692);
+    border-radius: 0px 0px 20px 20px;
+}
+
+main h1 {
+    color: #1a5c37 ;
+    font-family: var(--fonte-android);
+    font-weight: normal;
+}
+
+main h2 {
+    font-family: var(--fonte-android);
+    font-size: 1.3em;
+    font-weight: normal;
+    color: var(--cor04);
+    background-image: linear-gradient(to right, var(--cor01), transparent) ;
+    text-indent: 8px;
+}
+
+main p{
+    margin: 15px 0px 15px 0px; /*Margem do paragrafo para os H (título)*/
+    text-align: justify;
+    text-indent: 30px; /*Margem do inicio do paragrafo*/
+    font-size: 1em; 
+    line-height: 2em; /*Distancia de uma linha para outra na altura*/
+}
+
+main strong{
+    color: var(--cor04);
+    font-weight: bold;
+    padding: 2px 4px;
+}
+
+main a {
+    text-decoration: none;
+    font-weight: bold;
+    color: var(--cor05);
+    background-color: var(--cor01);
+    padding: 1px 4px;
+}
+
+main a:hover{
+    text-decoration: underline;
+    color: var(--cor04);
+}
+
+main img {
+    width: 100%;
+}
+
+main img.pequena{
+    max-width: 350px;
+    display: block; /*Transformando a img em um bloco para centraliza-la*/
+    margin: auto;   /*Centralizando de acordo com o tamanho da vp*/
+}
+
+div.video{
+    background-color:var(--cor0); /*Cor da div do video*/
+    margin: 0px -20px 30px -20px; /*Os menos 20 é para colar o div no main, o 30px é para descolar a div do aside*/
+    padding: 20px;
+    padding-bottom: 57.1%; /*Mudará as bordas do iframe....bordas pretas*/
+    position: relative; /*Deixa o tamanho relativo ao tamanho da vp*/   
+}
+
+div.video > iframe{
+    position: absolute; /*Posição sempre a mesma de acordo com a posição relativa da div à cima*/
+    top: 5%; /*Valores que vão permitir o uso de height e width*/
+    left: 5%;  /*Valores que vão permitir o uso de height e width*/
+    width: 90%; /*Deixando a largura do Iframe com 90% da div*/
+    height: 90%; /*Deixando a altura do Iframe com 90% da div...Valores esses que vão mudar graças ao position:relative; */
+}
+
+aside{
+    background-color: var(--cor01);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.404);
+}
+
+aside > h3{
+    background-color: var(--cor04);
+    color: white;
+    padding: 10px;
+    margin: -10px -10px 0px -10px; /*Colando o h3 no aside....-10 em cima, -10 direita, 0 em baixo e -10 na esquerda*/
+    border-radius: 10px 10px 0px 0px;
+
+}
+
+aside > ul{
+    list-style-type: '✅\00A0'; /*Colocando o sinal checked antes de cada item da lista, o 00A0 serve para dar espaçamento sem transformar a aspas em aspas invertida.*/
+    list-style-position: inside; /*Colocando as bolinhas do ul para dentro do aside*/
+    columns: 2; /*Dividindo a lista em duas colunas*/   
+}
+
+abbr{
+    text-decoration: none;
+}
+
+footer{
+    background-color: var(--cor05);
+    color: white;  
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color:white;
+    font-family: var(--fonte-padrao);
+    text-decoration: none;
+    font-weight: bold;
+    font-style: italic;
+}
+
+
+
+footer a:hover{
+    text-decoration: underline;
+    color: var(--cor01);
+}
